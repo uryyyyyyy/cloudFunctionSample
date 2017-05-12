@@ -19,7 +19,7 @@ http.createServer((req, res) => {
 
       const gcloud = require('google-cloud')({
         projectId: 'uryyyyyyy-ai-executor',
-        keyFilename: './uryyyyyyy-ai-executor-78cbbb6f481e.json'
+        keyFilename: './google-service.json'
       });
 
       const gcs = gcloud.storage();
