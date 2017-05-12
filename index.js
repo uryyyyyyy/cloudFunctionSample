@@ -1,10 +1,8 @@
 
-const http = require('http');
 const formidable = require('formidable');
 const fs = require('fs');
 
-http.createServer((req, res) => {
-
+const main = (req, res) => {
   const form = new formidable.IncomingForm();
   form.uploadDir = "./tmp";
   console.log('hello')
@@ -44,5 +42,12 @@ http.createServer((req, res) => {
       });
     }
   });
-}).listen(8080);
+}
 
+// for local
+const http = require('http');
+http.createServer(main).listen(8080);
+
+
+// for function
+exports.helloWorld = main
